@@ -14,20 +14,24 @@ botaoAdicionar.addEventListener("click", function(event) {
 
     if (erros.length > 0) {
         exibeMensagemDeErro(erros);
-
-
-
+        return;
     }
 
     tabela.appendChild(pacienteTr);
+    
 
     form.reset();
 });
 
 function exibeMensagemDeErro(erros) {
     var ul = document.querySelector("#mensagemErro");
+    erros.forEach(function(msgErro){
+        var li = document.createElement("li");
+        li.textContent = msgErro;
+        ul.appendChild(li);
+    });
 
-  
+
 }
 
 function obtemPacienteDoFormulario(form) {
@@ -68,6 +72,22 @@ function validaPaciente(paciente) {
 
     var erros = [];
 
+    if (paciente.altura.length == 0 ) {
+        erros.push("Altura nao pode ser em Branco");
+    }
+
+    if (paciente.peso.length == 0 ) {
+        erros.push("Peso nao pode ser em branco");
+    }
+
+    if (paciente.nome.length == 0 ) {
+        erros.push("Nome nao pode ser em branco");
+    }
+
+    if (paciente.gordura.length == 0) {
+        erros.push("Gordura nao pode ser em branco");
+    }
+
     if (!validaAltura(paciente.altura)) {
         erros.push("Altura esta invalida");
     }
@@ -75,6 +95,8 @@ function validaPaciente(paciente) {
     if (!validaPeso(paciente.peso)) {
         erros.push("Peso esta invalido");
     }
+
+    return erros;
 
     
 }
