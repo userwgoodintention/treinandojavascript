@@ -17,7 +17,12 @@ botaoAdicionar.addEventListener("click", function(event) {
         return;
     }
 
+
+    validaPaciente(paciente)
     tabela.appendChild(pacienteTr);
+
+    var mensagensErro = document.querySelector("#mensagens-erro");
+    mensagensErro.innerHTML = "";
     
 
     form.reset();
@@ -25,6 +30,7 @@ botaoAdicionar.addEventListener("click", function(event) {
 
 function exibeMensagemDeErro(erros) {
     var ul = document.querySelector("#mensagemErro");
+    ul.innerHTML = "";
     erros.forEach(function(msgErro){
         var li = document.createElement("li");
         li.textContent = msgErro;
