@@ -21,11 +21,13 @@ botaoAdicionar.addEventListener("click", function(event) {
     validaPaciente(paciente)
     tabela.appendChild(pacienteTr);
 
+    form.reset();
+
     var mensagensErro = document.querySelector("#mensagens-erro");
     mensagensErro.innerHTML = "";
     
 
-    form.reset();
+    
 });
 
 function exibeMensagemDeErro(erros) {
