@@ -1,6 +1,6 @@
 *{
 	box-sizing: border-box;
- }
+}
 
 body{
 	font-family: "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
@@ -54,7 +54,7 @@ section h2{
 table{
 	width: 100%;
 	margin-bottom : .5em;
-    table-layout: fixed;
+	table-layout: fixed;
 
 }
 
@@ -108,9 +108,9 @@ button{
 	background-color:#0c8cd3;
 	border-color: #04324c;
 	width: 20%;
-    display: block;
-    clear: both;
-    margin: 10px 0px;
+	display: block;
+	clear: both;
+	margin: 10px 0px;
 
 }
 
@@ -120,13 +120,13 @@ button:active{
 }
 
 button[disabled=disabled], button:disabled {
-    background-color: gray;
+	background-color: gray;
 	border-color: darkgray;
 
 }
 
 .adicionar-paciente{
-    margin-top: 30px;
+	margin-top: 30px;
 }
 
 .campo-invalido{
@@ -142,6 +142,12 @@ button[disabled=disabled], button:disabled {
 }
 
 .fadeOut {
-    opacity: 0;
-    transition: 0.5s;
+	opacity: 0;
+	transition: 0.5s;
+}
+
+#filtrar-tabela {
+	width: 200px;
+	height: 35px;
+	margin-bottom: 10px;
 }
