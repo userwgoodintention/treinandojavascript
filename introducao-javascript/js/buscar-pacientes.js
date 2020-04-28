@@ -9,7 +9,12 @@ xhr.open("GET", "https://api-pacientes.herokuapp.com/pacientes");
 
 
 xhr.addEventListener("load", function () {
-	console.log(xhr.responseText);
+	var resposta = xhr.responseText;
+	var pacientes = JSON.parse(resposta);
+
+	pacientes.forEach(function (paciente) {
+		adicionaPacienteNaTabela(paciente);
+	})
 });
 
 xhr.send();
